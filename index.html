@@ -304,9 +304,11 @@ function openPage(id){
   document.getElementById("cp-title").textContent=data.name;
   document.getElementById("cp-eyebrow").textContent=data.region;
   document.getElementById("cp-posts").innerHTML=data.posts.map(p=>
-    `<li class="cp-post-item" onclick="location.href='${p.url}'">
-      <span class="cp-post-title">${p.title}</span>
-      <span class="cp-post-date">${p.date?"("+p.date+")":""}</span>
+    `<li class="cp-post-item">
+      <a href="${p.url}" style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;width:100%;text-decoration:none;color:inherit;">
+        <span class="cp-post-title">${p.title}</span>
+        <span class="cp-post-date">${p.date?"("+p.date+")":""}</span>
+      </a>
     </li>`).join("");
   const pg=document.getElementById("country-page");
   pg.classList.add("open");
@@ -322,6 +324,19 @@ function closePage(){
 }
 
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closePage();});
+
+// Auto-open country panel from URL hash
+window.addEventListener('load', () => {
+  if (window.location.hash === '#taiwan') {
+    // Wait for map to load then open Taiwan
+    const tryOpen = setInterval(() => {
+      if (document.getElementById('loading').style.display === 'none') {
+        clearInterval(tryOpen);
+        openPage(158);
+      }
+    }, 100);
+  }
+});
 </script>
 
 <script>
