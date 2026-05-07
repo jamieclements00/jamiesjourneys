@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
   :root {
     --bg:#f9f7f4;--text:#1a1a1a;--text-muted:#999;--accent:#2c4a3e;
@@ -31,7 +32,6 @@
   .c-visited{fill:none;stroke:var(--accent);stroke-width:1.4;}
   .c-written{fill:var(--accent);stroke:var(--map-border);stroke-width:0.5;cursor:pointer;transition:opacity 0.2s;}
   .c-written:hover{opacity:0.7;}
-
   #tooltip{position:fixed;pointer-events:none;padding:7px 13px;background:var(--text);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:0.74rem;font-weight:500;letter-spacing:0.04em;border-radius:3px;opacity:0;transition:opacity 0.12s;z-index:200;white-space:nowrap;}
   #legend{position:absolute;bottom:28px;left:32px;display:flex;flex-direction:column;gap:10px;z-index:10;}
   .legend-item{display:flex;align-items:center;gap:10px;font-size:0.7rem;letter-spacing:0.06em;color:var(--text-muted);text-transform:uppercase;}
@@ -290,8 +290,6 @@ fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
       .datum(topojson.mesh(world,world.objects.countries,(a,b)=>a!==b))
       .attr("fill","none").attr("stroke","var(--map-border)").attr("stroke-width",0.4).attr("d",pathGen);
 
-
-
     const loader=document.getElementById("loading");
     loader.style.opacity="0";
     setTimeout(()=>loader.style.display="none",400);
@@ -322,5 +320,20 @@ function closePage(){
 
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closePage();});
 </script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
+
+Paste that in, commit, wait for redeploy, then try the password reset link again.
