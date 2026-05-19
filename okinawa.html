@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Okinawa — Jamie's Journeys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f9f7f4;--text:#1a1a1a;--text-muted:#999;--accent:#2c4a3e;--border:#e0dcd6;--nav-h:56px;}
+    @media(prefers-color-scheme:dark){:root{--bg:#111210;--text:#f0ede8;--text-muted:#555;--accent:#7aab8e;--border:#252522;}}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 32px;z-index:100;border-bottom:1px solid var(--border);background:var(--bg);}
+    .nav-back{font-size:0.74rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.2s;}
+    .nav-back:hover{color:var(--text);}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:400;color:var(--text);text-decoration:none;}
+    .nav-spacer{width:80px;}
+    .hero{position:relative;height:90vh;margin-top:var(--nav-h);overflow:hidden;background:#1a1a1a;display:flex;align-items:center;justify-content:center;}
+    .hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:48px 32px;background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 100%);}
+    .hero-eyebrow{font-size:0.7rem;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:12px;}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:400;color:#fff;line-height:1.1;margin-bottom:10px;}
+    .hero-date{font-size:0.72rem;letter-spacing:0.06em;color:rgba(255,255,255,0.5);}
+    .coming-soon-bg{width:100%;height:100%;background:linear-gradient(135deg,#1a1a1a 0%,#2c4a3e 100%);display:flex;align-items:flex-end;}
+    article{max-width:700px;margin:0 auto;padding:64px 32px 120px;text-align:center;}
+    .coming-soon-label{font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;}
+    .coming-soon-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:var(--text);margin-bottom:16px;}
+    .coming-soon-text{font-size:1rem;line-height:1.8;font-weight:300;color:var(--text-muted);max-width:480px;margin:0 auto;}
+    .section-break{width:36px;height:1px;background:var(--accent);margin:40px auto;}
+    .post-footer{border-top:1px solid var(--border);max-width:700px;margin:0 auto;padding:40px 32px 80px;display:flex;justify-content:space-between;align-items:center;}
+    .footer-link{font-size:0.74rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.2s;}
+    .footer-link:hover{color:var(--text);}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+    article{animation:fadeUp 0.5s ease both;}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-back" href="../index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </a>
+  <a class="nav-logo" href="../index.html">Jamie's Journeys</a>
+  <div class="nav-spacer"></div>
+</nav>
+
+<div class="hero">
+  <div class="coming-soon-bg">
+    <div class="hero-overlay">
+      <div class="hero-eyebrow">Japan · East Asia</div>
+      <h1 class="hero-title">Okinawa</h1>
+      <div class="hero-date">Coming soon</div>
+    </div>
+  </div>
+</div>
+
+<article>
+  <div class="coming-soon-label">Coming soon</div>
+  <h2 class="coming-soon-title">This post is on its way.</h2>
+  <div class="section-break"></div>
+</article>
+
+<div class="post-footer">
+  <a class="footer-link" href="dmz.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    DMZ & Gloucester Hill
+  </a>
+  <a class="footer-link" href="sapporo.html">
+    Sapporo
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+</div>
+
+</body>
+</html>
