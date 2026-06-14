@@ -33,19 +33,11 @@ article{max-width:700px;margin:0 auto;padding:64px 32px 120px;}
 .footer-link:hover{color:var(--text);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 article{animation:fadeUp 0.5s ease both;}
-#lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;display:none;align-items:center;justify-content:center;cursor:zoom-out;}
-#lightbox.open{display:flex;}
-#lightbox img{max-width:92vw;max-height:92vh;object-fit:contain;}
-#lightbox-close{position:fixed;top:20px;right:28px;color:#fff;font-size:2rem;cursor:pointer;opacity:0.7;transition:opacity 0.2s;}
-#lightbox-close:hover{opacity:1;}
 .post-text a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
 .post-text a:hover{opacity:0.75;}
 </style>
 </head>
 <body>
-
-<div id="lightbox"><span id="lightbox-close">×</span><img id="lightbox-img" src="" alt=""></div>
-
 <nav>
   <a class="nav-back" href="../index.html">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>

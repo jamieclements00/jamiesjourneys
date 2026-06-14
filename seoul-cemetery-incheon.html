@@ -29,13 +29,13 @@
   .post-text p+p{margin-top:1.5em;}
   .post-text a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
   .img-full{margin:48px -32px;}
-  .img-full img{width:100%;display:block;max-height:620px;object-fit:cover;cursor:zoom-in;}
+  .img-full img{width:100%;display:block;max-height:620px;object-fit:cover;}
   .img-pair{margin:48px -32px;display:grid;grid-template-columns:1fr 1fr;gap:4px;}
-  .img-pair img{width:100%;display:block;height:380px;object-fit:cover;cursor:zoom-in;}
+  .img-pair img{width:100%;display:block;height:380px;object-fit:cover;}
   .img-triple{margin:48px -32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;}
-  .img-triple img{width:100%;display:block;height:300px;object-fit:cover;cursor:zoom-in;}
+  .img-triple img{width:100%;display:block;height:300px;object-fit:cover;}
   .img-single{margin:48px 0;}
-  .img-single img{width:100%;display:block;border-radius:2px;cursor:zoom-in;}
+  .img-single img{width:100%;display:block;border-radius:2px;}
   .img-caption{font-size:0.72rem;letter-spacing:0.05em;color:var(--text-muted);margin-top:10px;text-align:center;}
   .section-break{width:36px;height:1px;background:var(--accent);margin:52px auto;}
   .post-quote{margin:48px 0;padding:0 0 0 24px;border-left:2px solid var(--accent);}
@@ -46,17 +46,9 @@
   .footer-link:hover{color:var(--text);}
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
   article{animation:fadeUp 0.5s ease both;}
-  #lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;display:none;align-items:center;justify-content:center;cursor:zoom-out;}
-  #lightbox.open{display:flex;}
-  #lightbox img{max-width:92vw;max-height:92vh;object-fit:contain;}
-  #lightbox-close{position:fixed;top:20px;right:28px;color:#fff;font-size:2rem;cursor:pointer;opacity:0.7;transition:opacity 0.2s;}
-  #lightbox-close:hover{opacity:1;}
 </style>
 </head>
 <body>
-
-<div id="lightbox"><span id="lightbox-close">&times;</span><img id="lightbox-img" src="" alt=""></div>
-
 <nav>
   <a class="nav-back" href="../index.html">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -130,9 +122,9 @@
 </article>
 
 <div class="post-footer">
-  <a class="footer-link" href="gloucester-hill.html">
+  <a class="footer-link" href="japanese-rule.html">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-    Gloucester Hill Battle Monument
+    Martyrs and Victims of Japanese Rule
   </a>
   <a class="footer-link" href="seodaemun-prison.html">
     Seodaemun Prison History Hall &amp; House of Sharing
