@@ -172,20 +172,6 @@ Object.entries(imgs).forEach(([id, src]) => {
   if(el) el.src = "data:image/jpeg;base64," + src;
 });
 
-// Lightbox
-document.querySelectorAll('img[cursor="zoom-in"], .img-pair img, .img-full img, .img-triple img, .img-single img').forEach(img => {
-  img.style.cursor = 'zoom-in';
-  img.addEventListener('click', () => {
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox').classList.add('open');
-  });
-});
-document.getElementById('lightbox').addEventListener('click', () => {
-  document.getElementById('lightbox').classList.remove('open');
-});
-document.getElementById('lightbox-close').addEventListener('click', () => {
-  document.getElementById('lightbox').classList.remove('open');
-});
 </script>
 </body>
 </html>
