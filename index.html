@@ -90,6 +90,7 @@
   #mobile-layer-regions,#mobile-layer-country{display:none;}
   @media(max-width:768px){
     #map-section{display:none;}
+    .section-inner{padding:48px 16px;}
     #cp-posts{display:none;}
     #mobile-nav{display:block;}
     #about{padding:32px 16px;}
@@ -179,11 +180,11 @@
 
 <section class="page-section subscribe-section" id="subscribe">
   <div class="section-inner">
-    <div class="section-eyebrow">Stay in touch</div>
+    <div class="section-eyebrow">Follow</div>
     <h2 class="section-title">Follow the journey</h2>
     <div class="section-rule"></div>
     <p class="subscribe-desc">Follow along on Instagram for updates, or drop me a message below.</p>
-    <form class="subscribe-form" name="contact" netlify method="POST">
+    <form class="subscribe-form" name="contact" netlify method="POST" action="/thanks">
       <input type="email" name="email" placeholder="your@email.com" required style="width:100%;">
       <textarea name="message" placeholder="Your message..." rows="4" style="width:100%;margin-top:8px;padding:12px;background:transparent;border:1px solid #252522;color:#f0ede8;font-family:'DM Sans',sans-serif;font-size:0.95rem;border-radius:4px;resize:none;display:block;"></textarea>
       <button type="submit" style="margin-top:8px;align-self:flex-end;">Send</button>
