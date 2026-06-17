@@ -376,13 +376,13 @@ window.addEventListener('load', () => {
 (function(){
   if(window.innerWidth > 768) return;
 
-  var REGION_ORDER = ['Africa','Caucasus','East Asia','Eastern Europe','North America','Southeast Asia','Western Europe'];
+  var REGION_ORDER = ["Africa","Caucasus","East Asia","Eastern Europe","North America","Southeast Asia","Western Europe"];
 
   function getRegions(){
     var regions = {};
     Object.values(WRITTEN).forEach(function(c){
-      if(!c.posts || c.posts.every(function(p){return p.url==='#';})) return;
-      var r = c.region || 'Other';
+      if(!c.posts || c.posts.every(function(p){return p.url==="#";})) return;
+      var r = c.region || "Other";
       if(!regions[r]) regions[r]=[];
       regions[r].push(c);
     });
@@ -390,76 +390,79 @@ window.addEventListener('load', () => {
   }
 
   function showLayer(id){
-    ['mobile-layer-regions','mobile-layer-country'].forEach(function(l){
-      document.getElementById(l).style.display='none';
+    ["mobile-layer-regions","mobile-layer-country"].forEach(function(l){
+      document.getElementById(l).style.display="none";
     });
-    if(id) document.getElementById(id).style.display='block';
+    if(id) document.getElementById(id).style.display="block";
+  }
+
+  function backBtn(from){
+    return "<div style=\"display:flex;align-items:center;padding:16px;border-bottom:0.5px solid #252522;\">"
+          +"<button onclick=\"mobileBack('"+from+"')\" style=\"background:none;border:none;color:#7aab8e;font-size:0.74rem;letter-spacing:0.09em;text-transform:uppercase;cursor:pointer;padding:0;\">&#8592; Back</button>"
+          +"</div>";
   }
 
   function buildRegions(){
     var regions = getRegions();
-    var html = '<div style="padding:24px 16px 48px;">';
+    var html = "<div style=\"padding:24px 16px 48px;\">";
     REGION_ORDER.forEach(function(r){
       if(!regions[r]) return;
-      html += '<div style="margin-bottom:24px;">';
-      html += '<p style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#7aab8e;margin:0 0 10px;font-weight:500;display:flex;align-items:center;gap:10px;">'
-             +r+'<span style="flex:1;height:0.5px;background:#252522;display:inline-block;"></span></p>';
-      html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">';
+      html += "<div style=\"margin-bottom:24px;\">";
+      html += "<p style=\"font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#7aab8e;margin:0 0 10px;font-weight:500;display:flex;align-items:center;gap:10px;\">"
+             +r+"<span style=\"flex:1;height:0.5px;background:#252522;display:inline-block;\"></span></p>";
+      html += "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;\">";
       regions[r].forEach(function(c){
-        html += '<button onclick="mobileShowCountry('+JSON.stringify(c.name)+')" '
-               +'style="background:#1a1c1a;border:0.5px solid #252522;border-radius:8px;padding:12px;text-align:left;cursor:pointer;width:100%;">'
-               +'<p style="font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin:0 0 4px;">'+r+'</p>'
-               +'<p style="font-size:0.95rem;color:#f0ede8;margin:0;font-family:'Playfair Display',serif;font-weight:400;">'+c.name+'</p>'
-               +'</button>';
+        html += "<button onclick=\"mobileShowCountry(this.dataset.n)\" data-n="+JSON.stringify(c.name)
+               +" style=\"background:#1a1c1a;border:0.5px solid #252522;border-radius:8px;padding:12px;text-align:left;cursor:pointer;width:100%;\">"
+               +"<p style=\"font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin:0 0 4px;\">"+r+"</p>"
+               +"<p style=\"font-size:0.95rem;color:#f0ede8;margin:0;font-weight:400;\">"+c.name+"</p>"
+               +"</button>";
       });
-      html += '</div></div>';
+      html += "</div></div>";
     });
-    html += '</div>';
-    document.getElementById('mobile-layer-regions').innerHTML =
-      '<div style="display:flex;align-items:center;padding:16px;border-bottom:0.5px solid #252522;">'
-      +'<button onclick="mobileBack(\'regions\')" style="background:none;border:none;color:#7aab8e;font-size:0.74rem;letter-spacing:0.09em;text-transform:uppercase;cursor:pointer;padding:0;">&#8592; Back</button>'
-      +'</div>' + html;
-    showLayer('mobile-layer-regions');
+    html += "</div>";
+    document.getElementById("mobile-layer-regions").innerHTML = backBtn("regions") + html;
+    showLayer("mobile-layer-regions");
   }
 
   window.mobileShowCountry = function(name){
     var country = Object.values(WRITTEN).find(function(c){return c.name===name;});
     if(!country) return;
-    var posts = country.posts.filter(function(p){return p.url!=='#';});
-    var html = '<div style="display:flex;align-items:center;padding:16px;border-bottom:0.5px solid #252522;">'
-              +'<button onclick="mobileBack(\'country\')" style="background:none;border:none;color:#7aab8e;font-size:0.74rem;letter-spacing:0.09em;text-transform:uppercase;cursor:pointer;padding:0;">&#8592; Back</button>'
-              +'</div>'
-              +'<div style="padding:24px 16px 48px;">'
-              +'<p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#f0ede8;margin:0 0 20px;font-weight:400;">'+name+'</p>';
+    var posts = country.posts.filter(function(p){return p.url!=="#";});
+    var html = backBtn("country")
+              +"<div style=\"padding:24px 16px 48px;\">"
+              +"<p style=\"font-size:1.4rem;color:#f0ede8;margin:0 0 20px;font-weight:400;\">"+name+"</p>";
     posts.forEach(function(p){
-      html += '<a href="'+p.url+'" style="display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:0.5px solid #252522;text-decoration:none;">'
-             +'<span style="font-size:0.95rem;color:#f0ede8;font-family:'Playfair Display',serif;">'+p.title+'</span>'
-             +'<span style="font-size:0.72rem;color:#555;margin-left:12px;white-space:nowrap;">'+p.date+'</span>'
-             +'</a>';
+      html += "<a href=\""+p.url+"\" style=\"display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:0.5px solid #252522;text-decoration:none;\">"
+             +"<span style=\"font-size:0.95rem;color:#f0ede8;\">"+p.title+"</span>"
+             +"<span style=\"font-size:0.72rem;color:#555;margin-left:12px;white-space:nowrap;\">"+p.date+"</span>"
+             +"</a>";
     });
-    html += '</div>';
-    document.getElementById('mobile-layer-country').innerHTML = html;
-    showLayer('mobile-layer-country');
+    html += "</div>";
+    document.getElementById("mobile-layer-country").innerHTML = html;
+    showLayer("mobile-layer-country");
   };
 
   window.mobileBack = function(from){
-    if(from==='country'){
-      showLayer('mobile-layer-regions');
+    if(from==="country"){
+      showLayer("mobile-layer-regions");
     } else {
       showLayer(null);
     }
   };
 
-  document.querySelector('.all-posts-link') && 
-    document.querySelector('.all-posts-link').addEventListener('click',function(e){
+  var nav = document.getElementById("mobile-nav");
+  if(nav){
+    nav.innerHTML = "<div id=\"mobile-layer-regions\" style=\"display:none;position:fixed;inset:0;background:#111210;z-index:200;overflow-y:auto;padding-top:56px;\"></div>"
+                   +"<div id=\"mobile-layer-country\" style=\"display:none;position:fixed;inset:0;background:#111210;z-index:201;overflow-y:auto;padding-top:56px;\"></div>";
+  }
+
+  var link = document.querySelector(".all-posts-link");
+  if(link){
+    link.addEventListener("click", function(e){
       e.preventDefault();
       buildRegions();
     });
-
-  var nav = document.getElementById('mobile-nav');
-  if(nav){
-    nav.innerHTML = '<div id="mobile-layer-regions" style="display:none;position:fixed;inset:0;background:#111210;z-index:200;overflow-y:auto;padding-top:56px;"></div>'
-                   +'<div id="mobile-layer-country" style="display:none;position:fixed;inset:0;background:#111210;z-index:201;overflow-y:auto;padding-top:56px;"></div>';
   }
 })();
 </script>
