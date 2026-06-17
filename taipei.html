@@ -39,6 +39,20 @@
   .footer-link{font-size:0.74rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.2s;}
   .footer-link:hover{color:var(--text);}
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+  @media(max-width:768px){
+    nav{padding:0 16px;}
+    .nav-logo{font-size:1rem;}
+    .hero{height:70vh;}
+    .hero-overlay{padding:32px 16px;}
+    article{padding:40px 16px 80px;}
+    .img-full{margin:32px 0;}
+    .img-pair{margin:32px 0;grid-template-columns:1fr;gap:4px;}
+    .img-pair img{height:260px;}
+    .img-triple{margin:32px 0;grid-template-columns:1fr;gap:4px;}
+    .img-triple img{height:260px;}
+    .img-single{margin:32px 0;}
+    .post-footer{padding:32px 16px 60px;}
+  }
   article{animation:fadeUp 0.5s ease both;}
 </style>
 </head>
