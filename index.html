@@ -414,7 +414,7 @@ window.addEventListener('load', () => {
       regions[r].forEach(function(c){
         html += "<button onclick=\"mobileShowCountry(this.dataset.n)\" data-n="+JSON.stringify(c.name)
                +" style=\"background:#1a1c1a;border:0.5px solid #252522;border-radius:8px;padding:12px;text-align:left;cursor:pointer;width:100%;\">"
-               +"<p style=\"font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin:0 0 4px;\">"+r+"</p>"
+               
                +"<p style=\"font-size:0.95rem;color:#f0ede8;margin:0;font-weight:400;\">"+c.name+"</p>"
                +"</button>";
       });
