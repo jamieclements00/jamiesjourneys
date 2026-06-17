@@ -56,7 +56,7 @@
   .subscribe-section .section-inner{display:flex;flex-direction:column;align-items:center;}
   .subscribe-section .section-rule{margin:0 auto 40px;}
   .subscribe-desc{font-size:1rem;line-height:1.7;font-weight:300;color:var(--text-muted);max-width:460px;margin-bottom:40px;}
-  .subscribe-form{display:flex;gap:12px;width:100%;max-width:440px;margin-bottom:40px;}
+  .subscribe-form{display:flex;flex-direction:column;gap:12px;width:100%;max-width:440px;margin-bottom:40px;}
   .subscribe-form input{flex:1;padding:12px 16px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;border-radius:2px;outline:none;transition:border-color 0.2s;}
   .subscribe-form input:focus{border-color:var(--accent);}
   .subscribe-form input::placeholder{color:var(--text-muted);}
@@ -184,9 +184,9 @@
     <div class="section-rule"></div>
     <p class="subscribe-desc">Follow along on Instagram for updates, or drop me a message below.</p>
     <form class="subscribe-form" name="contact" netlify method="POST">
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <textarea name="message" placeholder="Your message..." rows="3" style="width:100%;margin-top:8px;padding:12px;background:transparent;border:1px solid #252522;color:#f0ede8;font-family:'DM Sans',sans-serif;font-size:0.95rem;border-radius:4px;resize:none;"></textarea>
-      <button type="submit">Send</button>
+      <input type="email" name="email" placeholder="your@email.com" required style="width:100%;">
+      <textarea name="message" placeholder="Your message..." rows="4" style="width:100%;margin-top:8px;padding:12px;background:transparent;border:1px solid #252522;color:#f0ede8;font-family:'DM Sans',sans-serif;font-size:0.95rem;border-radius:4px;resize:none;display:block;"></textarea>
+      <button type="submit" style="margin-top:8px;align-self:flex-end;">Send</button>
     </form>
     <a class="instagram-link" href="https://instagram.com/jamiesjourneys00" target="_blank">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
