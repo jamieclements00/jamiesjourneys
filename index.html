@@ -84,7 +84,20 @@
   .cp-post-title{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:400;color:var(--text);line-height:1.3;}
   .cp-post-date{font-size:0.72rem;color:var(--text-muted);white-space:nowrap;flex-shrink:0;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-</style>
+
+  @media(max-width:768px){
+    #map-section{display:none;}
+    #mobile-region-grid{display:block;}
+  }
+  #mobile-region-grid{display:none;}
+  #mobile-region-grid .mrg-region{margin-bottom:28px;}
+  #mobile-region-grid .mrg-heading{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#7aab8e;margin:0 0 10px;font-weight:500;display:flex;align-items:center;gap:10px;}
+  #mobile-region-grid .mrg-heading::after{content:'';flex:1;height:0.5px;background:#252522;}
+  #mobile-region-grid .mrg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  #mobile-region-grid .mrg-card{background:#1a1c1a;border:0.5px solid #252522;border-radius:8px;padding:12px;text-decoration:none;display:block;}
+  #mobile-region-grid .mrg-country{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin:0 0 4px;}
+  #mobile-region-grid .mrg-title{font-size:0.95rem;color:#f0ede8;margin:0;font-family:'Playfair Display',serif;font-weight:400;}
+  </style>
 </head>
 <body>
 
@@ -110,6 +123,56 @@
     Scroll
   </div>
 </section>
+<div id="mobile-region-grid" style="padding:24px 16px 0;">
+  <div class="mrg-region">
+    <p class="mrg-heading">East Asia</p>
+    <div class="mrg-grid">
+      <a class="mrg-card" href="kinmen.html"><p class="mrg-country">Taiwan</p><p class="mrg-title">Kinmen</p></a>
+      <a class="mrg-card" href="cihu.html"><p class="mrg-country">Taiwan</p><p class="mrg-title">Cihu</p></a>
+      <a class="mrg-card" href="taipei.html"><p class="mrg-country">Taiwan</p><p class="mrg-title">Taipei</p></a>
+      <a class="mrg-card" href="tainan.html"><p class="mrg-country">Taiwan</p><p class="mrg-title">Tainan</p></a>
+      <a class="mrg-card" href="white-terror.html"><p class="mrg-country">Taiwan</p><p class="mrg-title">White Terror</p></a>
+      <a class="mrg-card" href="sapporo.html"><p class="mrg-country">Japan</p><p class="mrg-title">Sapporo</p></a>
+      <a class="mrg-card" href="dmz.html"><p class="mrg-country">Korea</p><p class="mrg-title">DMZ</p></a>
+      <a class="mrg-card" href="seoul-cemetery-incheon.html"><p class="mrg-country">Korea</p><p class="mrg-title">Seoul & Incheon</p></a>
+      <a class="mrg-card" href="japanese-rule.html"><p class="mrg-country">Korea</p><p class="mrg-title">Japanese Rule</p></a>
+      <a class="mrg-card" href="museums-of-seoul.html"><p class="mrg-country">Korea</p><p class="mrg-title">Museums of Seoul</p></a>
+    </div>
+  </div>
+  <div class="mrg-region">
+    <p class="mrg-heading">Southeast Asia</p>
+    <div class="mrg-grid">
+      <a class="mrg-card" href="phnom-penh.html"><p class="mrg-country">Cambodia</p><p class="mrg-title">Phnom Penh</p></a>
+    </div>
+  </div>
+  <div class="mrg-region">
+    <p class="mrg-heading">Caucasus</p>
+    <div class="mrg-grid">
+      <a class="mrg-card" href="baku.html"><p class="mrg-country">Azerbaijan</p><p class="mrg-title">Baku</p></a>
+    </div>
+  </div>
+  <div class="mrg-region">
+    <p class="mrg-heading">Western Europe</p>
+    <div class="mrg-grid">
+      <a class="mrg-card" href="paris.html"><p class="mrg-country">France</p><p class="mrg-title">Paris</p></a>
+      <a class="mrg-card" href="belfast.html"><p class="mrg-country">Northern Ireland</p><p class="mrg-title">Belfast</p></a>
+      <a class="mrg-card" href="bath.html"><p class="mrg-country">England</p><p class="mrg-title">Bath</p></a>
+    </div>
+  </div>
+  <div class="mrg-region">
+    <p class="mrg-heading">Africa</p>
+    <div class="mrg-grid">
+      <a class="mrg-card" href="cape-town.html"><p class="mrg-country">South Africa</p><p class="mrg-title">Cape Town</p></a>
+    </div>
+  </div>
+  <div class="mrg-region">
+    <p class="mrg-heading">Americas</p>
+    <div class="mrg-grid">
+      <a class="mrg-card" href="miami.html"><p class="mrg-country">USA</p><p class="mrg-title">Miami</p></a>
+      <a class="mrg-card" href="washington-dc.html"><p class="mrg-country">USA</p><p class="mrg-title">Washington D.C.</p></a>
+    </div>
+  </div>
+</div>
 
 <div id="tooltip"></div>
 
