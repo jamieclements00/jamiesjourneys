@@ -52,7 +52,7 @@
   .post-date{font-size:0.72rem;color:var(--text-muted);white-space:nowrap;flex-shrink:0;}
   .all-posts-link{display:inline-flex;align-items:center;gap:8px;margin-top:32px;font-size:0.74rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.2s;}
   .all-posts-link:hover{color:var(--text);}
-  .subscribe-section{text-align:center;}
+  .follow-section{text-align:center;}
   .subscribe-section .section-inner{display:flex;flex-direction:column;align-items:center;}
   .subscribe-section .section-rule{margin:0 auto 40px;}
   .subscribe-desc{font-size:1rem;line-height:1.7;font-weight:300;color:var(--text-muted);max-width:460px;margin-bottom:40px;}
@@ -95,8 +95,8 @@
     #about{padding:32px 16px;}
     #subscribe{padding:32px 16px;}
     .about-text{font-size:0.95rem;}
-    .subscribe-section .subscribe-form{flex-direction:column;gap:8px;}
-    .subscribe-section input{width:100%;}
+    .follow-section .subscribe-form{flex-direction:column;gap:8px;}
+    .follow-section input{width:100%;}
   }
   </style>
 </head>
@@ -109,7 +109,7 @@
   <div class="nav-links">
     <a href="#latest">Latest</a>
     <a href="#about">About</a>
-    <a href="#subscribe">Follow</a>
+    <a href="#follow">Follow</a>
   </div>
 </nav>
 
@@ -177,7 +177,7 @@
   </div>
 </section>
 
-<section class="page-section subscribe-section" id="subscribe">
+<section class="page-section subscribe-section" id="follow">
   <div class="section-inner">
     <div class="section-eyebrow">Follow</div>
     <h2 class="section-title">Follow the journey</h2>
@@ -466,6 +466,14 @@ window.addEventListener('load', () => {
     });
   }
 })();
+</script>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var target=document.getElementById(this.getAttribute('href').slice(1));
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}
+  });
+});
 </script>
 </body>
 </html>
