@@ -238,7 +238,12 @@ const WRITTEN = {
     {title:"Cape Town",date:"Dec-25",url:"cape-town.html"}
   ]},
   410:{name:"South Korea",region:"East Asia",centroid:[127.8,36.5],posts:[
-    {title:"Historical Museums of Seoul",date:"May-23",url:"war-memorial-korea.html"},
+    {title:"UN Memorial Cemetery & Geoje POW Camp",date:"May-23",url:"un-cemetery-geoje.html"},
+    {title:"Gwangju",date:"May-23",url:"gwangju.html"},
+    {title:"Haeundae Beach",date:"May-23",url:"haeundae.html"},
+    {title:"Chilgok",date:"May-23",url:"chilgok.html"},
+    {title:"Samsung Innovation Museum & Osan",date:"May-23",url:"samsung-and-osan.html"},
+    {title:"Historical Museums of Seoul",date:"May-23",url:"museums-of-seoul.html"},
     {title:"Legacy of Japanese Rule",date:"May-23",url:"japanese-rule.html"},
     {title:"Seoul National Cemetery & Incheon",date:"May-23",url:"seoul-cemetery-incheon.html"},
     {title:"DMZ & Gloucester Hill Battle Monument",date:"May-23",url:"dmz.html"}
@@ -471,9 +476,4 @@ window.addEventListener('load', () => {
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){
     var target=document.getElementById(this.getAttribute('href').slice(1));
-    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}
-  });
-});
-</script>
-</body>
-</html>
+    if(target){e.preventD
