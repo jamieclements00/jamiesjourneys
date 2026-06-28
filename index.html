@@ -225,11 +225,14 @@
 const WRITTEN = {
   826:{name:"United Kingdom",region:"Western Europe",centroid:[-2.5,54.0],posts:[
     {title:"Bath & Stonehenge",date:"Aug-24",url:"bath.html"},
-    {title:"Belfast",date:"Apr-24",url:"belfast.html"}
+    {title:"Belfast",date:"Apr-24",url:"belfast.html"},
+    {title:"Arundel Castle",date:"Jul-23",url:"arundel-castle.html"}
   ]},
   116:{name:"Cambodia",region:"Southeast Asia",centroid:[104.9,12.5],posts:[{title:"Coming soon",date:"",url:"#"}]},
   156:{name:"China",region:"East Asia",centroid:[104.2,35.9],posts:[{title:"Coming soon",date:"",url:"#"}]},
-  376:{name:"Israel",region:"Middle East",centroid:[34.8,31.5],posts:[{title:"Coming soon",date:"",url:"#"}]},
+  376:{name:"Israel",region:"Middle East",centroid:[34.8,31.5],posts:[
+    {title:"Caesarea",date:"Sep-23",url:"caesarea.html"}
+  ]},
   392:{name:"Japan",region:"East Asia",centroid:[138.3,36.2],posts:[
     {title:"Sapporo",date:"Sep-23",url:"sapporo.html"}
   ]},
@@ -256,6 +259,7 @@ const WRITTEN = {
     {title:"Kinmen",date:"Apr-23",url:"kinmen.html"}
   ]},
   764:{name:"Thailand",region:"Southeast Asia",centroid:[101.0,15.9],posts:[{title:"Death Railway",date:"May-23",url:"death-railway.html"}]},
+
   840:{name:"United States",region:"North America",centroid:[-99.0,38.0],posts:[
     {title:"Miami",date:"Mar-25",url:"miami.html"},
     {title:"Washington D.C.",date:"May-24",url:"washington-dc.html"}
@@ -475,5 +479,4 @@ window.addEventListener('load', () => {
 <script>
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){
-    var target=document.getElementById(this.getAttribute('href').slice(1));
-    if(target){e.preventD
+    var target=document.getElem
