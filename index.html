@@ -472,4 +472,19 @@ window.addEventListener('load', () => {
   var nav = document.getElementById("mobile-nav");
   if(nav){
     nav.innerHTML = "<div id=\"mobile-layer-regions\" style=\"display:none;position:fixed;inset:0;background:#111210;z-index:200;overflow-y:auto;padding-top:56px;\"></div>"
-                   +"<div id=\"mobile-layer-country\" style=\"display:none;position:fixed;inset:0;background:#111210;z-in
+                   +"<div id=\"mobile-layer-country\" style=\"display:none;position:fixed;inset:0;background:#111210;z-index:201;overflow-y:auto;padding-top:56px;\"></div>";
+  }
+
+  var link = document.querySelector(".all-posts-link");
+  if(link){
+    link.addEventListener("click", function(e){
+      e.preventDefault();
+      buildRegions();
+    });
+  }
+})();
+</script>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var target=document.getElem
