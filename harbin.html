@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harbin &#8212; Jamie's Journeys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#111210;--text:#f0ede8;--text-muted:#555;--accent:#7aab8e;--border:#252522;--nav-h:56px;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 32px;z-index:100;border-bottom:1px solid var(--border);background:var(--bg);}
+  .nav-back{font-size:0.74rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.2s;}
+  .nav-back:hover{color:var(--text);}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:400;color:var(--text);text-decoration:none;}
+  .nav-spacer{width:80px;}
+  article{max-width:700px;margin:0 auto;padding:120px 32px 120px;}
+  .coming-soon-eyebrow{font-size:0.7rem;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;}
+  .coming-soon-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:400;color:var(--text);line-height:1.1;margin-bottom:24px;}
+  .coming-soon-text{font-size:1.05rem;line-height:1.85;font-weight:300;color:var(--text-muted);}
+  .post-footer{border-top:1px solid var(--border);max-width:700px;margin:0 auto;padding:40px 32px 80px;display:flex;justify-content:space-between;align-items:center;}
+  .footer-link{font-size:0.74rem;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.2s;}
+  .footer-link:hover{color:var(--text);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+  article{animation:fadeUp 0.5s ease both;}
+  @media(max-width:768px){
+    nav{padding:0 16px;}
+    .nav-logo{font-size:1rem;}
+    article{padding:80px 16px 80px;}
+    .post-footer{padding:32px 16px 60px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </a>
+  <a class="nav-logo" href="index.html">Jamie's Journeys</a>
+  <div class="nav-spacer"></div>
+</nav>
+
+<article>
+  <p class="coming-soon-eyebrow">China &nbsp;&middot;&nbsp; East Asia</p>
+  <h1 class="coming-soon-title">Harbin</h1>
+  <p class="coming-soon-text">Coming soon.</p>
+</article>
+
+<div class="post-footer">
+  <a class="footer-link" href="kyoto.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Kyoto
+  </a>
+  <span></span>
+</div>
+
+</body>
+</html>
